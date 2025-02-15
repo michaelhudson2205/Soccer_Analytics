@@ -1,0 +1,144 @@
+---
+title: "Chapter_01"
+format: html
+---
+
+```{r}
+# Load necessary libraries
+library(glue)
+```
+
+
+### 1. Soccer Analytics: The Way Ahead
+
+Page 7
+
+```{r}
+Clubs <- c("Arsenal", "Blackburn Rovers", "Chelsea", "Leicester City", "Liverpool", "Man City", "Man United")
+Titles <- c(3,1,5,1,1,6,13)
+epl_dat <- cbind.data.frame(Clubs, Titles)
+print(epl_dat)
+```
+
+```{r}
+# Bar plot
+barplot(epl_dat$Titles, names.arg = epl_dat$Clubs, ylim = c(0,14))
+title("Bar chart of EPL champions 1992-2021")
+```
+
+```{r}
+#Pie chart
+my_colours <- gray.colors(length(epl_dat$Clubs))
+pie(Titles, labels = Clubs, col = my_colours, main = "Pie Chart of EPL champions 1992-2021")
+```
+
+![Alex Ferguson](Alex_Ferguson.webp)
+
+```{r}
+Manager <- c("Ferguson", "Moyes", "van Gaal", "Mourinho", "Solskjaer", "Rangnick")
+Wins <- c(895,27,54,84,91,11)
+Draws <- c(338,9,25,32,37,10)
+Losses <- c(267,15,24,28,40,8)
+
+mu_record <- cbind.data.frame(Manager, Wins, Draws, Losses)
+print(mu_record)
+```
+
+```{r}
+man1 <- "Ferguson"
+man2 <- "Rangnick"
+
+Manager1 <- mu_record[mu_record$Manager == man1,]
+Manager2 <- mu_record[mu_record$Manager == man2,]
+```
+
+```{r}
+# Create a contingency table called ConTab
+temp <- as.matrix(rbind(Manager1[,c(2:4)], Manager2[,c(2:4)]))
+ContTab <- as.table(temp)
+dimnames(ContTab) = list(Manager = c("Manager1", "Manager2"), Outcome = c("Wins", "Draws", "Loses"))
+print(ContTab)
+```
+
+```{r}
+# Perform chi-square test
+chsqRes <- chisq.test(ContTab)
+print(chsqRes)
+```
+
+#### Making Predictions
+
+```{r}
+# data for season 2020-2021
+Points <- c(61,55,41,39,67,44,59,28,59,66,69,86,74,45,23,43,62,26,65,45)
+Shots <- c(455,518,476,383,553,346,395,440,524,472,600,590,517,387,319,417,442,336,462,462)
+```
+
+```{r}
+dat2020 <- cbind.data.frame(Points, Shots)
+head(dat2020)
+```
+
+*ordinary least-squares (OLS)*
+
+```{r}
+# Build OLS regression model for season 2020-21
+# Using Shots
+mod2020 <- lm(Points ~ Shots, data = dat2020)
+summary(mod2020)
+```
+
+This summary tells us that for season 2020-2021, the regression model with `Shots` as the predictor was able to explain 61% of the variance in the points total, which is pretty good.
+
+```{r}
+# Scatter plot with best-fit line
+plot(dat2020$Shots, dat2020$Points, pch=20, col="black", xlim = c(0,800), ylim = c(0,100), ylab = "Points", xlab = "Shots")
+abline(lm(dat2020$Points ~ dat2020$Shots), lty = 1)
+```
+
+```{r}
+# Chelsea (who attempted 585 shots and achieved 74 points in season 2021-22)
+ChelPts_2021 <- predict(object = mod2020, list(Shots=585))
+print(ChelPts_2021)
+glue("Chelsea - Season 2021-22
+     Predicted points: {round(ChelPts_2021, 1)}
+     Actual points:    74")
+```
+
+In season 2021-2022, Chelsea actually earned 74 points, which is remarkably close to the total of 74.3 points predicted by the model.
+
+```{r}
+# Manchester City (who attempted 704 shots and achieved 93 points in season 2021-22)
+MCPts_2021 <- predict(object = mod2020, list(Shots=704))
+print(MCPts_2021)
+glue("Manchester City - Season 2021-22
+     Predicted points: {round(MCPts_2021, 1)}
+     Actual points:    93")
+```
+
+As we can see, the model predicts a total of 93.9 points for Manchester City, which is again remarkably close to the 93 points that they actually achieved in season 2021-22.
+
+```{r}
+# Norwich City (who attempted 374 shots and achieved 22 points in season 2021-22)
+NCPts_2021 <- predict(object = mod2020, list(Shots=374))
+print(NCPts_2021)
+glue("Norwich City - Season 2021-22
+     Predicted points: {round(NCPts_2021, 1)}
+     Actual points:    22")
+```
+
+Here, the model prediction is not so good because Norwich City only earned 22 points in the whole of that season. As we can see, the model over predicted the actual point total by 17.6 points, which suggests that the current model might be rather over simplistic and that a more complex model with more predictor variables might be necessary.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
