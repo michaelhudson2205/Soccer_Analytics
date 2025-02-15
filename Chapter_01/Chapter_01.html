@@ -96,14 +96,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(glue)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <section id="soccer-analytics-the-way-ahead" class="level3">
 <h3 class="anchored" data-anchor-id="soccer-analytics-the-way-ahead">1. Soccer Analytics: The Way Ahead</h3>
 <p>Page 7</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Clubs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Arsenal"</span>, <span class="st">"Blackburn Rovers"</span>, <span class="st">"Chelsea"</span>, <span class="st">"Leicester City"</span>, <span class="st">"Liverpool"</span>, <span class="st">"Man City"</span>, <span class="st">"Man United"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Titles <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">6</span>,<span class="dv">13</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>epl_dat <span class="ot">&lt;-</span> <span class="fu">cbind.data.frame</span>(Clubs, Titles)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(epl_dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Clubs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Arsenal"</span>, <span class="st">"Blackburn Rovers"</span>, <span class="st">"Chelsea"</span>, <span class="st">"Leicester City"</span>, <span class="st">"Liverpool"</span>, <span class="st">"Man City"</span>, <span class="st">"Man United"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Titles <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">6</span>,<span class="dv">13</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>epl_dat <span class="ot">&lt;-</span> <span class="fu">cbind.data.frame</span>(Clubs, Titles)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(epl_dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             Clubs Titles
 1          Arsenal      3
@@ -116,25 +120,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar plot</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(epl_dat<span class="sc">$</span>Titles, <span class="at">names.arg =</span> epl_dat<span class="sc">$</span>Clubs, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">14</span>))</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">"Bar chart of EPL champions 1992-2021"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar plot</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(epl_dat<span class="sc">$</span>Titles, <span class="at">names.arg =</span> epl_dat<span class="sc">$</span>Clubs, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">14</span>))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">"Bar chart of EPL champions 1992-2021"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Chapter_01_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Chapter_01_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Pie chart</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>my_colours <span class="ot">&lt;-</span> <span class="fu">gray.colors</span>(<span class="fu">length</span>(epl_dat<span class="sc">$</span>Clubs))</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(Titles, <span class="at">labels =</span> Clubs, <span class="at">col =</span> my_colours, <span class="at">main =</span> <span class="st">"Pie Chart of EPL champions 1992-2021"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Pie chart</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>my_colours <span class="ot">&lt;-</span> <span class="fu">gray.colors</span>(<span class="fu">length</span>(epl_dat<span class="sc">$</span>Clubs))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(Titles, <span class="at">labels =</span> Clubs, <span class="at">col =</span> my_colours, <span class="at">main =</span> <span class="st">"Pie Chart of EPL champions 1992-2021"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Chapter_01_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Chapter_01_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -145,6 +149,171 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figcaption>Alex Ferguson</figcaption>
 </figure>
 </div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Manager <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Ferguson"</span>, <span class="st">"Moyes"</span>, <span class="st">"van Gaal"</span>, <span class="st">"Mourinho"</span>, <span class="st">"Solskjaer"</span>, <span class="st">"Rangnick"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>Wins <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">895</span>,<span class="dv">27</span>,<span class="dv">54</span>,<span class="dv">84</span>,<span class="dv">91</span>,<span class="dv">11</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>Draws <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">338</span>,<span class="dv">9</span>,<span class="dv">25</span>,<span class="dv">32</span>,<span class="dv">37</span>,<span class="dv">10</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>Losses <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">267</span>,<span class="dv">15</span>,<span class="dv">24</span>,<span class="dv">28</span>,<span class="dv">40</span>,<span class="dv">8</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>mu_record <span class="ot">&lt;-</span> <span class="fu">cbind.data.frame</span>(Manager, Wins, Draws, Losses)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mu_record)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    Manager Wins Draws Losses
+1  Ferguson  895   338    267
+2     Moyes   27     9     15
+3  van Gaal   54    25     24
+4  Mourinho   84    32     28
+5 Solskjaer   91    37     40
+6  Rangnick   11    10      8</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>man1 <span class="ot">&lt;-</span> <span class="st">"Ferguson"</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>man2 <span class="ot">&lt;-</span> <span class="st">"Rangnick"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>Manager1 <span class="ot">&lt;-</span> mu_record[mu_record<span class="sc">$</span>Manager <span class="sc">==</span> man1,]</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>Manager2 <span class="ot">&lt;-</span> mu_record[mu_record<span class="sc">$</span>Manager <span class="sc">==</span> man2,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a contingency table called ConTab</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">rbind</span>(Manager1[,<span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>)], Manager2[,<span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>)]))</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>ContTab <span class="ot">&lt;-</span> <span class="fu">as.table</span>(temp)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(ContTab) <span class="ot">=</span> <span class="fu">list</span>(<span class="at">Manager =</span> <span class="fu">c</span>(<span class="st">"Manager1"</span>, <span class="st">"Manager2"</span>), <span class="at">Outcome =</span> <span class="fu">c</span>(<span class="st">"Wins"</span>, <span class="st">"Draws"</span>, <span class="st">"Loses"</span>))</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ContTab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          Outcome
+Manager    Wins Draws Loses
+  Manager1  895   338   267
+  Manager2   11    10     8</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform chi-square test</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>chsqRes <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(ContTab)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(chsqRes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's Chi-squared test
+
+data:  ContTab
+X-squared = 5.5681, df = 2, p-value = 0.06179</code></pre>
+</div>
+</div>
+<section id="making-predictions" class="level4">
+<h4 class="anchored" data-anchor-id="making-predictions">Making Predictions</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data for season 2020-2021</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>Points <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">61</span>,<span class="dv">55</span>,<span class="dv">41</span>,<span class="dv">39</span>,<span class="dv">67</span>,<span class="dv">44</span>,<span class="dv">59</span>,<span class="dv">28</span>,<span class="dv">59</span>,<span class="dv">66</span>,<span class="dv">69</span>,<span class="dv">86</span>,<span class="dv">74</span>,<span class="dv">45</span>,<span class="dv">23</span>,<span class="dv">43</span>,<span class="dv">62</span>,<span class="dv">26</span>,<span class="dv">65</span>,<span class="dv">45</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>Shots <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">455</span>,<span class="dv">518</span>,<span class="dv">476</span>,<span class="dv">383</span>,<span class="dv">553</span>,<span class="dv">346</span>,<span class="dv">395</span>,<span class="dv">440</span>,<span class="dv">524</span>,<span class="dv">472</span>,<span class="dv">600</span>,<span class="dv">590</span>,<span class="dv">517</span>,<span class="dv">387</span>,<span class="dv">319</span>,<span class="dv">417</span>,<span class="dv">442</span>,<span class="dv">336</span>,<span class="dv">462</span>,<span class="dv">462</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>dat2020 <span class="ot">&lt;-</span> <span class="fu">cbind.data.frame</span>(Points, Shots)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dat2020)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Points Shots
+1     61   455
+2     55   518
+3     41   476
+4     39   383
+5     67   553
+6     44   346</code></pre>
+</div>
+</div>
+<p><em>ordinary least-squares (OLS)</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build OLS regression model for season 2020-21</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Using Shots</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>mod2020 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Points <span class="sc">~</span> Shots, <span class="at">data =</span> dat2020)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod2020)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Points ~ Shots, data = dat2020)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-22.430  -7.576  -2.039  10.446  15.977 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) -21.9996    14.3042  -1.538    0.141    
+Shots         0.1646     0.0310   5.309 4.78e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 10.83 on 18 degrees of freedom
+Multiple R-squared:  0.6103,    Adjusted R-squared:  0.5886 
+F-statistic: 28.19 on 1 and 18 DF,  p-value: 4.776e-05</code></pre>
+</div>
+</div>
+<p>This summary tells us that for season 2020-2021, the regression model with <code>Shots</code> as the predictor was able to explain 61% of the variance in the points total, which is pretty good.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter plot with best-fit line</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(dat2020<span class="sc">$</span>Shots, dat2020<span class="sc">$</span>Points, <span class="at">pch=</span><span class="dv">20</span>, <span class="at">col=</span><span class="st">"black"</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">800</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">100</span>), <span class="at">ylab =</span> <span class="st">"Points"</span>, <span class="at">xlab =</span> <span class="st">"Shots"</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">lm</span>(dat2020<span class="sc">$</span>Points <span class="sc">~</span> dat2020<span class="sc">$</span>Shots), <span class="at">lty =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Chapter_01_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chelsea (who attempted 585 shots and achieved 74 points in season 2021-22)</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>ChelPts_2021 <span class="ot">&lt;-</span> <span class="fu">predict</span>(<span class="at">object =</span> mod2020, <span class="fu">list</span>(<span class="at">Shots=</span><span class="dv">585</span>))</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ChelPts_2021)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      1 
+74.2991 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glue</span>(<span class="st">"Chelsea - Season 2021-22</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="st">     Predicted points: {round(ChelPts_2021, 1)}</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="st">     Actual points:    74"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Chelsea - Season 2021-22
+Predicted points: 74.3
+Actual points:    74</code></pre>
+</div>
+</div>
+<p>In season 2021-2022, Chelsea actually earned 74 points, which is remarkably close to the total of 74.3 points predicted by the model.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Manchester City (who attempted 704 shots and achieved 93 points in season 2021-22)</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>MCPts_2021 <span class="ot">&lt;-</span> <span class="fu">predict</span>(<span class="at">object =</span> mod2020, <span class="fu">list</span>(<span class="at">Shots=</span><span class="dv">704</span>))</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(MCPts_2021)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       1 
+93.88807 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glue</span>(<span class="st">"Manchester City - Season 2021-22</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="st">     Predicted points: {round(MCPts_2021, 1)}</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="st">     Actual points:    93"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Manchester City - Season 2021-22
+Predicted points: 93.9
+Actual points:    93</code></pre>
+</div>
+</div>
+<p>As we can see, the model predicts a total of 93.9 points for Manchester City, which is again remarkably close to the 93 points that they actually achieved in season 2021-22.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Norwich City (who attempted 374 shots and achieved 22 points in season 2021-22)</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>NCPts_2021 <span class="ot">&lt;-</span> <span class="fu">predict</span>(<span class="at">object =</span> mod2020, <span class="fu">list</span>(<span class="at">Shots=</span><span class="dv">374</span>))</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(NCPts_2021)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       1 
+39.56571 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glue</span>(<span class="st">"Norwich City - Season 2021-22</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="st">     Predicted points: {round(NCPts_2021, 1)}</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="st">     Actual points:    22"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Norwich City - Season 2021-22
+Predicted points: 39.6
+Actual points:    22</code></pre>
+</div>
+</div>
+<p>Here, the model prediction is not so good because Norwich City only earned 22 points in the whole of that season. As we can see, the model over predicted the actual point total by 17.6 points, which suggests that the current model might be rather over simplistic and that a more complex model with more predictor variables might be necessary.</p>
+</section>
 </section>
 
 </main>
